@@ -3,9 +3,11 @@ const app = express()
 const port = 3000
 const indexRoutes=require('./routes/index')
 const bodyParser=require('body-parser')
+const cors=require('cors')
 const db=require('./model/db')
 
 app.use(express.json())
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/',indexRoutes)
 
